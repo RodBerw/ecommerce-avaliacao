@@ -78,6 +78,7 @@ public class Main {
         System.out.println("----- CARRINHO DE COMPRAS -----");
         carrinho.mostrarCarrinho();
 
+        System.out.println("Valor total: " + new DescontoDecorator(carrinho).getValorFinalDescontado().toString());
         System.out.println("1. Remover Produto");
         System.out.println("2. Confirmar Compra");
         System.out.println("3. Voltar");
@@ -102,61 +103,3 @@ public class Main {
     }
 }
 
-//class Loja {
-//    private Map<String, List<String>> produtosPorLoja;
-//
-//    public Loja() {
-//        produtosPorLoja = new HashMap<>();
-//        // Inicializar algumas lojas e produtos
-//        produtosPorLoja.put("Loja 1", Arrays.asList("Produto A", "Produto B", "Produto C"));
-//        produtosPorLoja.put("Loja 2", Arrays.asList("Produto X", "Produto Y", "Produto Z"));
-//    }
-//
-//    public List<String> listarLojas() {
-//        return new ArrayList<>(produtosPorLoja.keySet());
-//    }
-//
-//    public List<String> listarProdutos(String nomeLoja) {
-//        return produtosPorLoja.getOrDefault(nomeLoja, Collections.emptyList());
-//    }
-//}
-
-//class CarrinhoDeCompras {
-//    private List<String> produtos;
-//
-//    public CarrinhoDeCompras() {
-//        produtos = new ArrayList<>();
-//    }
-//
-//    public void adicionarProduto(String produto) {
-//        produtos.add(produto);
-//    }
-//
-//    public void mostrarCarrinho() {
-//        if (produtos.isEmpty()) {
-//            System.out.println("Carrinho vazio!");
-//        } else {
-//            System.out.println("Produtos no Carrinho:");
-//            for (int i = 0; i < produtos.size(); i++) {
-//                System.out.println((i + 1) + ". " + produtos.get(i));
-//            }
-//        }
-//    }
-//
-//    public void removerProduto(int numeroProduto) {
-//        if (numeroProduto > 0 && numeroProduto <= produtos.size()) {
-//            produtos.remove(numeroProduto - 1);
-//            System.out.println("Produto removido do carrinho!");
-//        } else {
-//            System.out.println("Número de produto inválido!");
-//        }
-//    }
-//
-//    public void confirmarCompra() {
-//        System.out.println("Compra confirmada! Obrigado por comprar conosco.");
-//        produtos.clear();
-//    }
-//
-//	}
-//
-//}

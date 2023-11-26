@@ -10,11 +10,13 @@ public class CarrinhoDeCompras implements ProdutoObserver {
 	ECommerce ecommercaAtual;
 	public List<Produto> itensSelecionados = new ArrayList<>();
 	List<ECommerce> observadores = new ArrayList<>();
+	public Double valorTotal = 0.0;
 	
 
 	@Override
 	public void Update(Produto produto) {
 		itensSelecionados.add(produto);
+		valorTotal += produto.preco;
 	}
 	
 	public void RemoverProduto(Integer num) {
